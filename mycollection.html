@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<body style="background-color:#2BCFC9">
+
+<style>
+#first {
+  background-color: #DB4343;
+  color: white;
+}
+#link{
+	color:green;
+}
+</style>
+</head>
+<center>
+<h1 style="text-decoration:underline;">My Gunpla Collection</h1>
+
+
+<body>
+<div class="intro">
+<a href="home.html" id="link">Home</a>
+<a href="overview.html" id="link"> Overview</a>
+<a href="hg.html" id="link"> High Grade</a>
+<a href="mg.html" id="link"> Master Grade</a>
+<a href="./pg.html" id="link">Perfect Grade</a>
+<a href="game.html" id="link"> Game</a>
+</div>
+
+<div class="intro">
+<p id="first">I began collection Gunpla in 2014. The first kit I owned was MG Sengoku Astray. When I was younger I always used to play with Legos and Bionicles. So I always enjoyed building and customizing figures. When I first attempted to build this model kit, it took me several days because of the large amount of pieces and the massive book of building instructions. After I finished Sengoku Astray, I fell in love with this new, harder and more mature building process. So I let go of my younger building items and invested in Gundams.</p>
+<br>
+<img src="piraka.jpg" width="400px" height="400px" alt="oopsies" </img>  
+<img src="axalara.jpg" width="600px" height="400px" alt="oopsies" </img>
+<img src="gadunka.jpg" width="450px" height="400px" alt="oopsies" </img>  
+
+</div>
+<h5><i><font color="red">Bionicles</font></i></h5>  
+
+<label>What Gundam you would like to know more about!</label>
+<select id="show">
+<option value="Sengoku">Sengoku Astray</option>
+<option value="sword">00 7Sword</option>
+<option value="justice">Justice Gundam</option>
+<option value="fenice">Fenice Rinascita</option>
+<option value="blue">Astray Blue Frame</option>
+<option value="quant">00 Quant</option>
+</select>
+<br>
+<br>
+
+<button onclick="getMoreInfo()"> Get more Info </button>
+<br>
+
+<p id="output" />
+<hr>
+<p><i><font color="red">First Row: Sengoku Astray, 00 7Sword, Justice Gundam, Fenice Rinascita</font></i></p> 
+<p><i><font color="red">Second Row:Astray Blue Frame, 00 Quant</font></i></p>
+<br> 
+<img src="sengokuastray2.jpg" width="300px" height="300px" alt="oopsies" </img>  
+<img src="sword2.jpg" width="300px" height="300px" alt="oopsies" </img>  
+<img src="justice2.jpg" width="300px" height="300px" alt="oopsies" </img>  
+<img src="fenice2.jpg" width="300px" height="300px" alt="oopsies" </img>  
+<img src="blueastray2.jpg" width="400px" height="550px" alt="oopsies" </img>  
+<img src="quant2.jpg" width="400px" height="550px" alt="oopsies" </img>  
+</body>
+<script type="text/javascript" >
+var show_details = {Sengoku:"Sengoku Astray wasthe first Gundam I owned, I didn't know how to treat it well, so my actualy model is broken into many pieces. This model kit has great dynamic posing with its four arms and two beautiful swords. It's plastic material is just a littel fragile and joints would break far too easily compared to my other kits.", 
+sword: "00 7Sword is one of my favorite gundams I owned, I didn't know how to take care of it, and this model suffers from having a lof of loose and fragile peices so it broke a lot. So i decided to weather it and make it a battle-worn Gundam. I'm very proud of this model's outcome." ,
+justice:"Justice gundam was a gift from a friend, probably the best gundam I've ever built in the sense of articulation and dynamic posing. This kit is one of the newest kits created by Bandai and it shows. Joints are all brand new and very good at supporting the kit. Even thinner sections that may seem easy to break do not break easily. An awesome kit for any model builder.",
+fenice:"The first gundam I really put my effort into. I love his wing span and large shield. I tried weathering him in a way it looked like this gundam was used on snowy mountain tops and was stored in dirty caves in the mountains. It didn't turn out exactly how I wanted.",
+blue:"Astray Blue Frame I obtained a few months ago. His build was very similar to Sengoku Astray's, but he is unique in the way his sword transforms to many different things. This kit fixes many problems with the Sengoku Astray, joints may look the same, but the plastic material is sturdier and more supportive of the kit's body. He also comes with a stand that holds his giant sword in any position you desire.",
+quant:"00 Quant I recently bought. I wanted to get this model kit because of how badly I treated his earlier iteration; 00 7Sword. So I took my time with him and he turned out to be far more stunning and dynamic than his older version. He still suffers from some aspects of having old and new pieces. But overall is a spectacular looking model kit."
+};
+function getMoreInfo() {
+var show = document.getElementById('show').value;
+document.getElementById("output").innerHTML = show_details[show];
+}
+
+</script>
+<br>
+<footer>Biensur C. 12/18/2018 Copyright &copy;</footer>
+</html>

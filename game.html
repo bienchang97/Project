@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<head>
+<style>
+
+button {
+margin-bottom:15px;
+}
+
+.container{
+width: 100%;
+height: 80vh;
+position: relative;
+border: 1px solid black;
+
+}
+
+.polygon{
+
+width: 150px;
+height: 150px;
+background: blue;
+
+-webkit-clip-path: polygon(20% 10%, 85% 30%, 100% 100%, 0% 100%);
+clip-path: polygon(20% 10%, 85% 30%, 100% 100%, 0% 100%);
+position: absolute;
+}
+
+.circle{
+
+width: 150px;
+height: 150px;
+border-radius: 50%;
+background: yellow;
+position: absolute;
+
+}
+
+.rectangle{
+width: 150px;
+height: 150px;
+background: red;
+position: absolute;
+
+}
+
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript">
+
+var t = 0;
+var myVar;
+
+//timer display on button click
+
+function myTimer() {
+document.getElementById("demo").innerHTML = "Timer :" + t;
+t++;
+}
+
+//function to calculate random shapes
+
+function generateShape() {
+myVar = setInterval(myTimer, 1000);
+var i = 0;
+
+//calculate the width and height of the parent
+
+var height = $(".container").height();
+var width = $(".container").width();
+
+//display 20 circles, rectangles, and polygons
+
+while (i < 20) {
+var randomNumberForShape = Math.floor(Math.random() * (3) + 1);
+var div;
+
+// Polygon
+
+if (randomNumberForShape === 1) {
+var randomTop = Math.floor(Math.random() * (height - 100) + 100);
+var randomLeft = Math.floor(Math.random() * (width - 100) + 100);
+var div = "<div class='polygon' id='poly" + i + "' style='top:" + randomTop + "px;left:" + randomLeft + "px' onclick='removeShape(poly" + i + ");'></div>";
+$(".container").append(div);
+}
+
+// circle
+
+else if (randomNumberForShape === 2) {
+var randomTop = Math.floor(Math.random() * (height - 100) + 100);
+var randomLeft = Math.floor(Math.random() * (width - 100) + 100);
+var div = "<div class='circle' id='circle" + i + "' style='top:" + randomTop + "px;left:" + randomLeft + "px' onclick='removeShape(circle" + i + ");'></div>";
+$(".container").append(div);
+}
+
+// rectangle
+
+else {
+var randomTop = Math.floor(Math.random() * (height - 100) + 100);
+var randomLeft = Math.floor(Math.random() * (width - 100) + 100);
+var div = "<div class='rectangle' id='rect" + i + "' style='top:" + randomTop + "px;left:" + randomLeft + "px' onclick='removeShape(rect" + i + ");'></div>"
+$(".container").append(div);
+
+}
+i++;
+}
+}
+
+//remove the shape 
+
+function removeShape(id) {
+console.log(id.id);
+$("#" + id.id).remove();
+console.log($('.container').children().length);
+
+if ($('.container').children().length == 0) {
+clearInterval(myVar);
+}
+}
+
+</script>
+</head>
+<body style="background-color:#F5DA86">
+<center>
+<center>
+<h2 style="text-decoration:underline;">A Lot to Take In? Take a Game Break!</h2>
+
+		<a href="./home.html">Home</a>	
+		<a href="./overview.html">Overview</a>
+		<a href="./hg.html">High Grade</a>
+		<a href="./mg.html">Master Grade</a>
+		<a href="./pg.html">Perfect Grade</a>
+		<a href="./mycollection.html">My Collection</a>
+
+<p>The most iconic colors of gunpla are red, blue and yellow. See how fast you can click all the colored shapes!<p>
+<button id="generateShapeBtn" type="button" onclick="generateShape()"> Lets Go! </button>
+<p id="demo"></p>
+
+<!-- shape container -->
+
+<div class="container">
+</div>
+</body>
+</html>
